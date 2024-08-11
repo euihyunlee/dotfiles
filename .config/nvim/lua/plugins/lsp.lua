@@ -16,9 +16,10 @@ return {
                     end
 
                     map('K', vim.lsp.buf.hover, 'Hover')
-                    --map('gd', builtin.lsp_definitions, 'Go to definition')
                     map('gd', vim.lsp.buf.definition, 'Go to definition')
                     map('gD', vim.lsp.buf.declaration, 'Go to declaration')
+
+                    -- Telescope
                     map('gr', builtin.lsp_references, 'Go to references')
                 end
             })
@@ -67,10 +68,6 @@ return {
                         luasnip.lsp_expand(args.body)
                     end,
                 },
-                --sources = cmp.config.sources({
-                --    { name = 'nvim_lsp' },
-                --    { name = 'luasnip' },
-                --}),
                 sources = {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
